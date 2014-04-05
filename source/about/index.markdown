@@ -10,7 +10,7 @@ footer: true
 My name is <a href="http://www.twitter.com/cleytonm" target="_blank">Cleyton Messias</a>
 and I'm a software developer at <a href="http://site.trustvox.com.br">Trustvox</a>.
 
-I've created this blog as way for keeping some small discoveries in our product development. I don't intend to write complete solutions, but just small pieces of code that can be used in your own solution.
+I've created this blog as way for keeping some small discoveries in software development. I don't intend to write complete solutions, but just small pieces of code that can be used in your own solution.
 
 **But why this?** As your products grows, usually you have to combine different ways of doing stuff in order to attend your needs, so, there are cases where solutions found googling just don't fit your application without adaptation. So that's why my only intention is giving some small solutions to small problems. It's your call how and where you're going to use it ;)
 
