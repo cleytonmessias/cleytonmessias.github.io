@@ -18,7 +18,7 @@ I'm a brazilian and live in San Paulo.
 
 **Dude, but if you're a brazilian, why this blog is written in English?**
 
-For SEO purposes! Even brazilian developers are used to search in content in english. 
+For SEO purposes! Even brazilian developers are used to search content in english. 
 
 **Tell me more about Trustvox**
 
