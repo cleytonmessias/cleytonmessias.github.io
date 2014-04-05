@@ -4,7 +4,7 @@
   <title><![CDATA[Pieces of Code]]></title>
   <link href="http://cleytonmessias.github.io/atom.xml" rel="self"/>
   <link href="http://cleytonmessias.github.io/"/>
-  <updated>2014-04-05T13:29:40-03:00</updated>
+  <updated>2014-04-05T13:49:57-03:00</updated>
   <id>http://cleytonmessias.github.io/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
@@ -14,9 +14,9 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hello]]></title>
+    <title type="html"><![CDATA[Hello!]]></title>
     <link href="http://cleytonmessias.github.io/blog/2014/04/05/hello/"/>
-    <updated>2014-04-05T00:00:00-03:00</updated>
+    <updated>2014-04-05T13:10:53-03:00</updated>
     <id>http://cleytonmessias.github.io/blog/2014/04/05/hello</id>
     <content type="html"><![CDATA[<p>Hi!</p>
 
@@ -30,7 +30,9 @@
 
 <p>Googling a little more, I found this really cool platform built on top of Jekyll: <a href="http://octopress.org/" target="_blank">Octopress, a blogging framework for hackers</a>. So far, everything that was needed was simple just by following its documentation.</p>
 
-<p>As a theme for my blog, I&rsquo;m using this <a href="https://github.com/johnkeith/boldandblue" target="_blank"></a>really nice one.</p>
+<p>To do by about page, I&rsquo;ve did this <a href="http://gangmax.me/blog/2012/05/04/add-about-page-in-octopress/">simple steps</a>.</p>
+
+<p>As a theme for my blog, I&rsquo;m using this <a href="https://github.com/johnkeith/boldandblue" target="_blank">really nice one</a>.</p>
 ]]></content>
   </entry>
   
