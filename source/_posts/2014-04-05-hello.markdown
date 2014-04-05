@@ -24,6 +24,8 @@ As a theme for my blog, I'm using this <a href="https://github.com/johnkeith/bol
 
 I bought this domain at <a href="http://www.godaddy.com">Godaddy</a> and configure it using nice <a href="http://blog.flatironschool.com/post/56900358130/setting-up-a-custom-domain-with-octopress-github">post</a>.
 
+For analytics, I've created an account at Google Analytics, but to configure it, i'm using <a href="https://segment.io" target="_blank">Segment.IO</a>. This way, I can add more analytics without increasing my page size.
+
 All of this writing is being made in Sublime Text using the <a href="https://sublime.wbond.net/packages/MarkdownEditing">Markdown plugin</a>.
 
 As I said, I don't want to show complete solutions, but if you used just one of this links, it'll be worth of doing it :)
