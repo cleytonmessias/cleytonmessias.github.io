@@ -36,7 +36,7 @@ Here's a print screen of my editor writing this post:
 
 {% img /images/posts/sublime_markdown.png %}
 
-To sumarize this post, I've talked about:
+To summarize this post, I've talked about:
 
 - A little about me
 - Jekyll
