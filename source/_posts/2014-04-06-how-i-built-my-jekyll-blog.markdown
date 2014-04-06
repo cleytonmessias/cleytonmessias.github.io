@@ -4,6 +4,8 @@ title: "How I built my Jekyll blog?"
 date: 2014-04-06 18:23:18 -0300
 comments: true
 categories: [Jekyll, Octopress]
+keywords: "jekyll, octopress, domain registration"
+description: "How I built my jekyll blog?"
 ---
 
 Hi!
