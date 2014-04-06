@@ -8,6 +8,7 @@ subtitle: Just missing parts of code for your application
 author: Cleyton Messias
 simple_search: https://www.google.com/search
 description: This blog intends to give some missing pieces of code for your application
+keywords: "Ruby, Rails, programming, software, development"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
