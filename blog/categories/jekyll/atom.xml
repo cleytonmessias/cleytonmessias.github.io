@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Pieces of Code]]></title>
-  <link href="http://cleytonmessias.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Jekyll | Pieces of Code]]></title>
+  <link href="http://cleytonmessias.github.io/blog/categories/jekyll/atom.xml" rel="self"/>
   <link href="http://cleytonmessias.github.io/"/>
   <updated>2014-04-06T18:58:07-03:00</updated>
   <id>http://cleytonmessias.github.io/</id>
@@ -24,7 +24,7 @@
 
 <p>For the initial post, I&rsquo;m gonna write all the things I&rsquo;m using to build this blog. As many things I intend to write, nothing magical.</p>
 
-<p>Just to start, in my <a href="http://cleytonmessias.github.io/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
+<p>Just to start, in my <a href="/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
 
 <p>Being a blog focused in software development, I thought it will be cool to use something new for me to learn and post about it. So, I decided to use <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.</p>
 
@@ -44,7 +44,7 @@
 
 <p>Here&rsquo;s a print screen of my editor writing this post:</p>
 
-<p><img src="http://cleytonmessias.github.io/images/posts/sublime_markdown.png"></p>
+<p><img src="/images/posts/sublime_markdown.png"></p>
 
 <p>To sumarize this post, I&rsquo;ve talked about:</p>
 
