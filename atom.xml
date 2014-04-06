@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Pieces of Code]]></title>
-  <link href="http://cleytonmessias.github.io/atom.xml" rel="self"/>
-  <link href="http://cleytonmessias.github.io/"/>
-  <updated>2014-04-06T18:58:07-03:00</updated>
-  <id>http://cleytonmessias.github.io/</id>
+  <link href="http://piecesofcode.co/atom.xml" rel="self"/>
+  <link href="http://piecesofcode.co/"/>
+  <updated>2014-04-06T20:03:17-03:00</updated>
+  <id>http://piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
     
@@ -15,16 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[How I Built My Jekyll Blog?]]></title>
-    <link href="http://cleytonmessias.github.io/blog/2014/04/06/how-i-built-my-jekyll-blog/"/>
+    <link href="http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/"/>
     <updated>2014-04-06T18:23:18-03:00</updated>
-    <id>http://cleytonmessias.github.io/blog/2014/04/06/how-i-built-my-jekyll-blog</id>
+    <id>http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog</id>
     <content type="html"><![CDATA[<p>Hi!</p>
 
 <p>Thanks for getting in here!</p>
 
 <p>For the initial post, I&rsquo;m gonna write all the things I&rsquo;m using to build this blog. As many things I intend to write, nothing magical.</p>
 
-<p>Just to start, in my <a href="http://cleytonmessias.github.io/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
+<p>Just to start, in my <a href="http://piecesofcode.co/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
 
 <p>Being a blog focused in software development, I thought it will be cool to use something new for me to learn and post about it. So, I decided to use <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.</p>
 
@@ -44,9 +44,9 @@
 
 <p>Here&rsquo;s a print screen of my editor writing this post:</p>
 
-<p><img src="http://cleytonmessias.github.io/images/posts/sublime_markdown.png"></p>
+<p><img src="http://piecesofcode.co/images/posts/sublime_markdown.png"></p>
 
-<p>To sumarize this post, I&rsquo;ve talked about:</p>
+<p>To summarize this post, I&rsquo;ve talked about:</p>
 
 <ul>
 <li>A little about me</li>

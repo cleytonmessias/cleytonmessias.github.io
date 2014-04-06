@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://cleytonmessias.github.io/sitemap.xml 
+Sitemap: http://piecesofcode.co/sitemap.xml 
