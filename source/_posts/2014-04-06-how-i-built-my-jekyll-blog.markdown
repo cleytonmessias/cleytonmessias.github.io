@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How I built my Jekyll blog?"
+title: "How I built my blog using Jekyll?"
 date: 2014-04-06 18:23:18 -0300
 comments: true
 categories: [Jekyll, Octopress]
