@@ -4,7 +4,7 @@
   <title><![CDATA[Pieces of Code]]></title>
   <link href="http://piecesofcode.co/atom.xml" rel="self"/>
   <link href="http://piecesofcode.co/"/>
-  <updated>2014-04-06T20:03:17-03:00</updated>
+  <updated>2014-04-07T09:57:27-03:00</updated>
   <id>http://piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How I Built My Jekyll Blog?]]></title>
+    <title type="html"><![CDATA[How I Built My Blog Using Jekyll?]]></title>
     <link href="http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/"/>
     <updated>2014-04-06T18:23:18-03:00</updated>
     <id>http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog</id>
