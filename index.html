@@ -9,7 +9,7 @@
   <meta name="author" content="Cleyton Messias">
 
   
-  <meta name="description" content="Hi! Thanks for getting in here! For the initial post, I&rsquo;m gonna write all the things I&rsquo;m using to build this blog. As many things I &hellip;">
+  <meta name="description" content="If you already used VCR to record requests to unit tests your application, maybe all your tests passed in the day you developed. Then you go to sleep &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -59,6 +59,81 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2014/04/07/using-vcr-with-timecop/">Using VCR With Timecop</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-07T21:53:34-03:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
+        
+           | <a href="/2014/04/07/using-vcr-with-timecop/#disqus_thread"
+             data-disqus-identifier="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you already used <a href="https://github.com/vcr/vcr" target="_blank"><code>VCR</code></a> to record requests to unit tests your application, maybe all your tests passed in the day you developed. Then you go to sleep, thinking in another task.</p>
+
+<p>You wake up another day, run all the tests again and boom! All related to VCR are failing and you don&rsquo;t know why.</p>
+
+<p>I run into this problem when I was using <code>VCR</code>  and <a href="https://github.com/travisjeffery/timecop" target="_blank"><code>Timecop</code></a> gems.</p>
+
+<p>I was using <code>Timecop</code> to freeze my requests and the other day, all my related tests was failing.</p>
+
+<p>To fix this, I&rsquo;ve looked and at this <a href="https://github.com/vcr/vcr/issues/266">issue</a> and saw it was solved by exposing the <code>VCR::Cassette#originally_recorded_at</code>.</p>
+
+<p>So, to make my tests passing again:</p>
+
+<figure class='code'><figcaption><span> (timecop_snippet.rb)</span> <a href='/downloads/code/timecop_snippet.rb'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">before</span> <span class="k">do</span>
+</span><span class='line'>  <span class="no">Timecop</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="no">VCR</span><span class="o">.</span><span class="n">current_cassette</span><span class="o">.</span><span class="n">originally_recorded_at</span> <span class="o">||</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">after</span> <span class="k">do</span>
+</span><span class='line'>  <span class="no">Timecop</span><span class="o">.</span><span class="n">return</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In my case, I had trouble because my requests had time dependencies, so, I needed to use the time when the original cassete was recorded. Then I started using <code>Timecop</code> and the tests started to fail the other day.</p>
+
+<p>But quick fixed!</p>
+
+<p>Feel free to give feedback for better solutions :)</p>
+
+<p>Happy coding!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -160,6 +235,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/04/07/using-vcr-with-timecop/">Using VCR With Timecop</a>
+      </li>
     
       <li class="post">
         <a href="/2014/04/06/how-i-built-my-jekyll-blog/">How I Built My Blog Using Jekyll?</a>
