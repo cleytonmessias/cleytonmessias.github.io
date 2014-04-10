@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Pieces of Code]]></title>
   <link href="http://piecesofcode.co/categories/ruby/atom.xml" rel="self"/>
   <link href="http://piecesofcode.co/"/>
-  <updated>2014-04-07T22:20:37-03:00</updated>
+  <updated>2014-04-10T18:55:17-03:00</updated>
   <id>http://piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
@@ -12,6 +12,130 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Representable Gem to Parse Nested Results]]></title>
+    <link href="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/"/>
+    <updated>2014-04-10T18:29:11-03:00</updated>
+    <id>http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results</id>
+    <content type="html"><![CDATA[<p>Recently, I had to integrate with a SOAP Webservice from Ruby.</p>
+
+<p>Thanks to <a href="http://savonrb.com/version2/">Savon gem</a> this was pretty easy.</p>
+
+<p>To invoke the webservice, I made a simple method:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (savon_request.rb)</span> <a href='/downloads/code/savon_request.rb'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="nb">method</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">client</span> <span class="o">=</span> <span class="ss">Savon</span><span class="p">:</span><span class="ss">:Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">basic_auth</span><span class="p">:</span> <span class="n">auth</span><span class="p">,</span> <span class="ss">wsdl</span><span class="p">:</span> <span class="n">wsdl</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="nb">method</span><span class="p">,</span> <span class="ss">message</span><span class="p">:</span> <span class="n">message</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">auth</span>
+</span><span class='line'>  <span class="o">[</span><span class="n">options</span><span class="o">[</span><span class="ss">:ws_user</span><span class="o">]</span><span class="p">,</span> <span class="n">options</span><span class="o">[</span><span class="ss">:ws_password</span><span class="o">]</span> <span class="o">]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">wsdl</span>
+</span><span class='line'>  <span class="n">options</span><span class="o">[</span><span class="ss">:wsdl_endpoint</span><span class="o">]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Savon already gives us a hash response, making easier to deal it.</p>
+
+<p>Usually soap responses are pretty nested, so I use representable with goal of only map it.</p>
+
+<p>I added the <a href="https://github.com/apotonick/representable">representable gem</a> and create a (in my scenario) a client response:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (client_representer.rb)</span> <a href='/downloads/code/client_representer.rb'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">module</span> <span class="nn">ClientRepresenter</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="ss">Representable</span><span class="p">:</span><span class="ss">:JSON</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">nested</span> <span class="ss">:client_get_response</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">nested</span> <span class="ss">:client_get_result</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">property</span> <span class="ss">:email</span>
+</span><span class='line'>      <span class="n">property</span> <span class="ss">:name</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>To map for a real class that my application understands, i&rsquo;ve created a Virtus Model and extend the representable.</p>
+
+<p>Virtus model:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (client_virtus.rb)</span> <a href='/downloads/code/client_virtus.rb'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Client</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Virtus</span><span class="o">.</span><span class="n">model</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">attribute</span> <span class="ss">:email</span><span class="p">,</span> <span class="nb">String</span>
+</span><span class='line'>  <span class="n">attribute</span> <span class="ss">:name</span><span class="p">,</span> <span class="nb">String</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And to map it:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (service_representable_sample.rb)</span> <a href='/downloads/code/service_representable_sample.rb'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">response</span> <span class="o">=</span> <span class="n">soap</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="ss">:client_get</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">client</span> <span class="o">=</span> <span class="no">Client</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">client</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="ss">Representers</span><span class="p">:</span><span class="ss">:ClientRepresenter</span><span class="p">)</span>
+</span><span class='line'><span class="n">client</span><span class="o">.</span><span class="n">from_hash</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:with_indifferent_access</span><span class="p">))</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>That&rsquo;s is:</p>
+
+<ul>
+<li>I made a request for a SOAP webservice using Savon.</li>
+<li>Create a representable to parse the results.</li>
+<li>Use a Virtus model that my application can handle.</li>
+</ul>
+
+
+<p>Of course it be made better, so feel free to comment it :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using VCR With Timecop]]></title>

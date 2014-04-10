@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Pieces of Code</title>
+  <title>Representable Gem to Parse Nested Results - Pieces of Code</title>
   <meta name="author" content="Cleyton Messias">
 
   
-  <meta name="description" content="Recently, I had to integrate with a SOAP Webservice from Ruby. Thanks to Savon gem this was pretty easy. To invoke the webservice, I made a simple &hellip;">
-  
+  <meta name="description" content="Using representable gem to parse nested results">
+  <meta name="keywords" content="Representable, Ruby">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://piecesofcode.co">
+  <link rel="canonical" href="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Pieces of Code" type="application/atom+xml">
@@ -57,15 +57,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/2014/04/10/representable-gem-to-parse-nested-results/">Representable Gem to Parse Nested Results</a></h1>
+      <h1 class="entry-title">Representable Gem to Parse Nested Results</h1>
     
     
       <p class="meta">
@@ -83,15 +80,15 @@
 
 <time datetime="2014-04-10T18:29:11-03:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
         
-           | <a href="/2014/04/10/representable-gem-to-parse-nested-results/#disqus_thread"
-             data-disqus-identifier="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://piecesofcode.co">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Recently, I had to integrate with a SOAP Webservice from Ruby.</p>
+<div class="entry-content"><p>Recently, I had to integrate with a SOAP Webservice from Ruby.</p>
 
 <p>Thanks to <a href="http://savonrb.com/version2/">Savon gem</a> this was pretty easy.</p>
 
@@ -212,97 +209,16 @@
 
 <p>Of course it be made better, so feel free to comment it :)</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/2014/04/07/using-vcr-with-timecop/">Using VCR With Timecop</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Cleyton Messias</span></span>
 
-<time datetime="2014-04-07T21:53:34-03:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
-        
-           | <a href="/2014/04/07/using-vcr-with-timecop/#disqus_thread"
-             data-disqus-identifier="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you already used <a href="https://github.com/vcr/vcr" target="_blank"><code>VCR</code></a> to record requests to unit tests your application, maybe all your tests passed in the day you developed. Then you go to sleep, thinking in another task.</p>
-
-<p>You wake up another day, run all the tests again and boom! All related to VCR are failing and you don&rsquo;t know why.</p>
-
-<p>I run into this problem when I was using <code>VCR</code>  and <a href="https://github.com/travisjeffery/timecop" target="_blank"><code>Timecop</code></a> gems.</p>
-
-<p>I was using <code>Timecop</code> to freeze my requests and the other day, all my related tests was failing.</p>
-
-<p>To fix this, I&rsquo;ve looked and at this <a href="https://github.com/vcr/vcr/issues/266">issue</a> and saw it was solved by exposing the <code>VCR::Cassette#originally_recorded_at</code>.</p>
-
-<p>So, to make my tests passing again:</p>
-
-<figure class='code'><figcaption><span> (timecop_snippet.rb)</span> <a href='/downloads/code/timecop_snippet.rb'>download</a></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">before</span> <span class="k">do</span>
-</span><span class='line'>  <span class="no">Timecop</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="no">VCR</span><span class="o">.</span><span class="n">current_cassette</span><span class="o">.</span><span class="n">originally_recorded_at</span> <span class="o">||</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">after</span> <span class="k">do</span>
-</span><span class='line'>  <span class="no">Timecop</span><span class="o">.</span><span class="n">return</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In my case, I had trouble because my requests had time dependencies, so, I needed to use the time when the original cassete was recorded. Then I started using <code>Timecop</code> and the tests started to fail the other day.</p>
-
-<p>But quick fixed!</p>
-
-<p>Feel free to give feedback for better solutions :)</p>
-
-<p>Happy coding!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/2014/04/06/how-i-built-my-jekyll-blog/">How I Built My Blog Using Jekyll?</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -314,73 +230,45 @@
   
 
 
-<time datetime="2014-04-06T18:23:18-03:00" pubdate data-updated="true">Apr 6<span>th</span>, 2014</time>
-        
-           | <a href="/2014/04/06/how-i-built-my-jekyll-blog/#disqus_thread"
-             data-disqus-identifier="http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/">Comments</a>
-        
-      </p>
+<time datetime="2014-04-10T18:29:11-03:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/representable/'>Representable</a>, <a class='category' href='/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Hi!</p>
-
-<p>Thanks for getting in here!</p>
-
-<p>For the initial post, I&rsquo;m gonna write all the things I&rsquo;m using to build this blog. As many things I intend to write, nothing magical.</p>
-
-<p>Just to start, in my <a href="/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
-
-<p>Being a blog focused in software development, I thought it will be cool to use something new for me to learn and post about it. So, I decided to use <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.</p>
-
-<p>Googling a little more, I found this really cool platform built on top of Jekyll: <a href="http://octopress.org/" target="_blank">Octopress, a blogging framework for hackers</a>. So far, everything that was needed was simple just by following its documentation. As a developer, I&rsquo;m feeling some freedom to customize and use it. Fast and clean!</p>
-
-<p>To do my about page, I&rsquo;ve followed these <a href="http://gangmax.me/blog/2012/05/04/add-about-page-in-octopress/" target="_blank">simple steps</a>.</p>
-
-<p>As a theme for my blog, I&rsquo;m using this <a href="https://github.com/johnkeith/boldandblue" target="_blank">really nice one</a>. If you to know more, see more themes <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank">here</a>.</p>
-
-<p>I bought this domain at <a href="http://www.godaddy.com">Godaddy</a> and configure it using nice <a href="http://blog.flatironschool.com/post/56900358130/setting-up-a-custom-domain-with-octopress-github">post</a>.</p>
-
-<p>For analytics, I&rsquo;ve created an account at Google Analytics, but to add it, i&rsquo;m using <a href="https://segment.io" target="_blank">Segment.IO</a>. This way, I can add more analytics without increasing my page size.</p>
-
-<p>All of this writing is being made in Sublime Text using the <a href="https://sublime.wbond.net/packages/MarkdownEditing">Markdown plugin</a>.</p>
-
-<p>As I said, I don&rsquo;t want to show complete solutions, but if you use just one of this links, it&rsquo;ll be worth of doing it :)</p>
-
-<p>Here&rsquo;s a print screen of my editor writing this post:</p>
-
-<p><img src="/images/posts/sublime_markdown.png"></p>
-
-<p>To summarize this post, I&rsquo;ve talked about:</p>
-
-<ul>
-<li>A little about me</li>
-<li>Jekyll</li>
-<li>Octopress</li>
-<li>How to create a page in Jekyll</li>
-<li>Themes for Octopress</li>
-<li>Domain registration</li>
-<li>Analytics</li>
-<li>Text and editor and plugin to help you</li>
-</ul>
-
-
-<p>If you have any doubts, feel free to contact in the comments below :)</p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/" data-via="cleytonm" data-counturl="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2014/04/07/using-vcr-with-timecop/" title="Previous Post: Using VCR with Timecop">&laquo; Using VCR with Timecop</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-<aside class="sidebar">
+  </section>
+
+</div>
+
+  <aside class="sidebar">
    
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
@@ -412,7 +300,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/cleytonmessias">@cleytonmessias</a> on GitHub
@@ -446,6 +334,7 @@
 </aside>
 
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -460,7 +349,10 @@
       var disqus_shortname = 'cleytonmessias';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/';
+        var disqus_url = 'http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
