@@ -9,7 +9,7 @@
   <meta name="author" content="Cleyton Messias">
 
   
-  <meta name="description" content="Recently, I had to integrate with a SOAP Webservice from Ruby. Thanks to Savon gem this was pretty easy. To invoke the webservice, I made a simple &hellip;">
+  <meta name="description" content="This week, I had a problem when I reinstalled my Ruby version. When I went to terminal and type rails console c, it was not working presenting this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -52,6 +52,7 @@
   <li><a href="/">Blog</a></li>
   <li><a href="/archives">Archives</a></li>
   <li><a href="/about">About</a></li>
+  <li><a href="http://twitter.com/cleytonm" target="_blank">Twitter</a></li>
 </ul>
 
 </nav>
@@ -59,6 +60,67 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2014/04/12/rails-console-not-opening-in-macos/">Rails Console Not Opening in MacOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-12T12:21:12-03:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
+        
+           | <a href="/2014/04/12/rails-console-not-opening-in-macos/#disqus_thread"
+             data-disqus-identifier="http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This week, I had a problem when I reinstalled my Ruby version.</p>
+
+<p>When I went to terminal and type <code>rails console c</code>, it was not working presenting this error message:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/irb/completion.rb:9:in `require': cannot load such file -- readline (LoadError)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After some googling and asking it about in <a href="http://stackoverflow.com/questions/22995981/rails-console-is-not-working-rails-c">StackOverflow</a>, a user give a hint: <em>&ldquo;You didn&rsquo;t compile Ruby with readline support.&rdquo;</em></p>
+
+<p>Then, I found this <a href="https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X">link</a> that teachs 3 ways to do and this worked for me:</p>
+
+<ul>
+<li>Go to terminal</li>
+<li>brew install readline</li>
+<li>Open the file <code>~/.rvm/user/db</code> and add the line: <code>ruby_configure_flags=--with-readline-dir=/usr/local/opt/readline</code></li>
+<li>rvm reinstall 2.0.0-p247</li>
+</ul>
+
+
+<p>Now, when I go to terminal and type <code>rails console c</code>, it&rsquo;s working again :)</p>
+
+<p>Hope it helps someone :)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -393,6 +455,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/04/12/rails-console-not-opening-in-macos/">Rails Console Not Opening in MacOS</a>
+      </li>
     
       <li class="post">
         <a href="/2014/04/10/representable-gem-to-parse-nested-results/">Representable Gem to Parse Nested Results</a>

@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Using VCR With Timecop - Pieces of Code</title>
+  <title>Rails Console Not Opening in MacOS - Pieces of Code</title>
   <meta name="author" content="Cleyton Messias">
 
   
-  <meta name="description" content="Using VCR with Timecop">
-  <meta name="keywords" content="VCR, Timecop, Unit Testing, Ruby">
+  <meta name="description" content="Rails console not opening in MacOS">
+  <meta name="keywords" content="Rails, console">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop">
+  <link rel="canonical" href="http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Pieces of Code" type="application/atom+xml">
@@ -63,7 +63,7 @@
   
   <header>
     
-      <h1 class="entry-title">Using VCR With Timecop</h1>
+      <h1 class="entry-title">Rails Console Not Opening in MacOS</h1>
     
     
       <p class="meta">
@@ -79,7 +79,7 @@
   
 
 
-<time datetime="2014-04-07T21:53:34-03:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
+<time datetime="2014-04-12T12:21:12-03:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://piecesofcode.co">Comments</a>
@@ -89,43 +89,29 @@
   </header>
 
 
-<div class="entry-content"><p>If you already used <a href="https://github.com/vcr/vcr" target="_blank"><code>VCR</code></a> to record requests to unit tests your application, maybe all your tests passed in the day you developed. Then you go to sleep, thinking in another task.</p>
+<div class="entry-content"><p>This week, I had a problem when I reinstalled my Ruby version.</p>
 
-<p>You wake up another day, run all the tests again and boom! All related to VCR are failing and you don&rsquo;t know why.</p>
+<p>When I went to terminal and type <code>rails console c</code>, it was not working presenting this error message:</p>
 
-<p>I run into this problem when I was using <code>VCR</code>  and <a href="https://github.com/travisjeffery/timecop" target="_blank"><code>Timecop</code></a> gems.</p>
-
-<p>I was using <code>Timecop</code> to freeze my requests and the other day, all my related tests was failing.</p>
-
-<p>To fix this, I&rsquo;ve looked and at this <a href="https://github.com/vcr/vcr/issues/266">issue</a> and saw it was solved by exposing the <code>VCR::Cassette#originally_recorded_at</code>.</p>
-
-<p>So, to make my tests passing again:</p>
-
-<figure class='code'><figcaption><span> (timecop_snippet.rb)</span> <a href='/downloads/code/timecop_snippet.rb'>download</a></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">before</span> <span class="k">do</span>
-</span><span class='line'>  <span class="no">Timecop</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="no">VCR</span><span class="o">.</span><span class="n">current_cassette</span><span class="o">.</span><span class="n">originally_recorded_at</span> <span class="o">||</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">after</span> <span class="k">do</span>
-</span><span class='line'>  <span class="no">Timecop</span><span class="o">.</span><span class="n">return</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/irb/completion.rb:9:in `require': cannot load such file -- readline (LoadError)</span></code></pre></td></tr></table></div></figure>
 
 
-<p>In my case, I had trouble because my requests had time dependencies, so, I needed to use the time when the original cassete was recorded. Then I started using <code>Timecop</code> and the tests started to fail the other day.</p>
+<p>After some googling and asking it about in <a href="http://stackoverflow.com/questions/22995981/rails-console-is-not-working-rails-c">StackOverflow</a>, a user give a hint: <em>&ldquo;You didn&rsquo;t compile Ruby with readline support.&rdquo;</em></p>
 
-<p>But quick fixed!</p>
+<p>Then, I found this <a href="https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X">link</a> that teachs 3 ways to do and this worked for me:</p>
 
-<p>Feel free to give feedback for better solutions :)</p>
+<ul>
+<li>Go to terminal</li>
+<li>brew install readline</li>
+<li>Open the file <code>~/.rvm/user/db</code> and add the line: <code>ruby_configure_flags=--with-readline-dir=/usr/local/opt/readline</code></li>
+<li>rvm reinstall 2.0.0-p247</li>
+</ul>
 
-<p>Happy coding!</p>
+
+<p>Now, when I go to terminal and type <code>rails console c</code>, it&rsquo;s working again :)</p>
+
+<p>Hope it helps someone :)</p>
 </div>
 
 
@@ -148,12 +134,12 @@
   
 
 
-<time datetime="2014-04-07T21:53:34-03:00" pubdate data-updated="true">Apr 7<span>th</span>, 2014</time>
+<time datetime="2014-04-12T12:21:12-03:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/categories/ruby/'>Ruby</a>, <a class='category' href='/categories/timecop/'>Timecop</a>, <a class='category' href='/categories/unit-testing/'>Unit Testing</a>, <a class='category' href='/categories/vcr/'>VCR</a>
+    <a class='category' href='/categories/rails/'>Rails</a>, <a class='category' href='/categories/console/'>console</a>
   
 </span>
 
@@ -162,7 +148,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/" data-via="cleytonm" data-counturl="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/" data-via="cleytonm" data-counturl="http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/" >Tweet</a>
   
   
   
@@ -171,10 +157,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2014/04/06/how-i-built-my-jekyll-blog/" title="Previous Post: How I built my blog using Jekyll?">&laquo; How I built my blog using Jekyll?</a>
+        <a class="basic-alignment left" href="/2014/04/10/representable-gem-to-parse-nested-results/" title="Previous Post: Representable gem to parse nested results">&laquo; Representable gem to parse nested results</a>
       
-      
-        <a class="basic-alignment right" href="/2014/04/10/representable-gem-to-parse-nested-results/" title="Next Post: Representable gem to parse nested results">Representable gem to parse nested results &raquo;</a>
       
     </p>
   </footer>
@@ -274,8 +258,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/';
-        var disqus_url = 'http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/';
+        var disqus_identifier = 'http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/';
+        var disqus_url = 'http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/';
         var disqus_script = 'embed.js';
       
     (function () {
