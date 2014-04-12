@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://piecesofcode.co/sitemap.xml 
+Sitemap: http://blog.piecesofcode.co/sitemap.xml 

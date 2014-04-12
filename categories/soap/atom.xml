@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Soap | Pieces of Code]]></title>
-  <link href="http://piecesofcode.co/categories/soap/atom.xml" rel="self"/>
-  <link href="http://piecesofcode.co/"/>
-  <updated>2014-04-12T12:45:39-03:00</updated>
-  <id>http://piecesofcode.co/</id>
+  <link href="http://blog.piecesofcode.co/categories/soap/atom.xml" rel="self"/>
+  <link href="http://blog.piecesofcode.co/"/>
+  <updated>2014-04-12T13:03:59-03:00</updated>
+  <id>http://blog.piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Representable Gem to Parse Nested Results]]></title>
-    <link href="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/"/>
     <updated>2014-04-10T18:29:11-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results</id>
+    <id>http://blog.piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results</id>
     <content type="html"><![CDATA[<p>Recently, I had to integrate with a SOAP Webservice from Ruby.</p>
 
 <p>Thanks to <a href="http://savonrb.com/version2/">Savon gem</a> this was pretty easy.</p>

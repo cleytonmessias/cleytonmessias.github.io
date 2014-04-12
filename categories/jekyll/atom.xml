@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jekyll | Pieces of Code]]></title>
-  <link href="http://piecesofcode.co/categories/jekyll/atom.xml" rel="self"/>
-  <link href="http://piecesofcode.co/"/>
-  <updated>2014-04-12T12:45:39-03:00</updated>
-  <id>http://piecesofcode.co/</id>
+  <link href="http://blog.piecesofcode.co/categories/jekyll/atom.xml" rel="self"/>
+  <link href="http://blog.piecesofcode.co/"/>
+  <updated>2014-04-12T13:03:59-03:00</updated>
+  <id>http://blog.piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How I Built My Blog Using Jekyll?]]></title>
-    <link href="http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/"/>
     <updated>2014-04-06T18:23:18-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog</id>
+    <id>http://blog.piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog</id>
     <content type="html"><![CDATA[<p>Hi!</p>
 
 <p>Thanks for getting in here!</p>

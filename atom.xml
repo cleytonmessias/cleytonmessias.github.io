@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Pieces of Code]]></title>
-  <link href="http://piecesofcode.co/atom.xml" rel="self"/>
-  <link href="http://piecesofcode.co/"/>
-  <updated>2014-04-12T12:45:39-03:00</updated>
-  <id>http://piecesofcode.co/</id>
+  <link href="http://blog.piecesofcode.co/atom.xml" rel="self"/>
+  <link href="http://blog.piecesofcode.co/"/>
+  <updated>2014-04-12T13:03:59-03:00</updated>
+  <id>http://blog.piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rails Console Not Opening in MacOS]]></title>
-    <link href="http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos/"/>
     <updated>2014-04-12T12:21:12-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos</id>
+    <id>http://blog.piecesofcode.co/2014/04/12/rails-console-not-opening-in-macos</id>
     <content type="html"><![CDATA[<p>This week, I had a problem when I reinstalled my Ruby version.</p>
 
 <p>When I went to terminal and type <code>rails console c</code>, it was not working presenting this error message:</p>
@@ -46,16 +46,16 @@
   
   <entry>
     <title type="html"><![CDATA[Representable Gem to Parse Nested Results]]></title>
-    <link href="http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results/"/>
     <updated>2014-04-10T18:29:11-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results</id>
+    <id>http://blog.piecesofcode.co/2014/04/10/representable-gem-to-parse-nested-results</id>
     <content type="html"><![CDATA[<p>Recently, I had to integrate with a SOAP Webservice from Ruby.</p>
 
 <p>Thanks to <a href="http://savonrb.com/version2/">Savon gem</a> this was pretty easy.</p>
 
 <p>To invoke the webservice, I made a simple method:</p>
 
-<figure class='code'><figcaption><span> (savon_request.rb)</span> <a href='http://piecesofcode.co/downloads/code/savon_request.rb'>download</a></figcaption>
+<figure class='code'><figcaption><span> (savon_request.rb)</span> <a href='http://blog.piecesofcode.co/downloads/code/savon_request.rb'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -97,7 +97,7 @@
 
 <p>I added the <a href="https://github.com/apotonick/representable">representable gem</a> and create a (in my scenario) a client response:</p>
 
-<figure class='code'><figcaption><span> (client_representer.rb)</span> <a href='http://piecesofcode.co/downloads/code/client_representer.rb'>download</a></figcaption>
+<figure class='code'><figcaption><span> (client_representer.rb)</span> <a href='http://blog.piecesofcode.co/downloads/code/client_representer.rb'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -125,7 +125,7 @@
 
 <p>Virtus model:</p>
 
-<figure class='code'><figcaption><span> (client_virtus.rb)</span> <a href='http://piecesofcode.co/downloads/code/client_virtus.rb'>download</a></figcaption>
+<figure class='code'><figcaption><span> (client_virtus.rb)</span> <a href='http://blog.piecesofcode.co/downloads/code/client_virtus.rb'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -143,7 +143,7 @@
 
 <p>And to map it:</p>
 
-<figure class='code'><figcaption><span> (service_representable_sample.rb)</span> <a href='http://piecesofcode.co/downloads/code/service_representable_sample.rb'>download</a></figcaption>
+<figure class='code'><figcaption><span> (service_representable_sample.rb)</span> <a href='http://blog.piecesofcode.co/downloads/code/service_representable_sample.rb'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -174,9 +174,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using VCR With Timecop]]></title>
-    <link href="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/07/using-vcr-with-timecop/"/>
     <updated>2014-04-07T21:53:34-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/07/using-vcr-with-timecop</id>
+    <id>http://blog.piecesofcode.co/2014/04/07/using-vcr-with-timecop</id>
     <content type="html"><![CDATA[<p>If you already used <a href="https://github.com/vcr/vcr" target="_blank"><code>VCR</code></a> to record requests to unit tests your application, maybe all your tests passed in the day you developed. Then you go to sleep, thinking in another task.</p>
 
 <p>You wake up another day, run all the tests again and boom! All related to VCR are failing and you don&rsquo;t know why.</p>
@@ -189,7 +189,7 @@
 
 <p>So, to make my tests passing again:</p>
 
-<figure class='code'><figcaption><span> (timecop_snippet.rb)</span> <a href='http://piecesofcode.co/downloads/code/timecop_snippet.rb'>download</a></figcaption>
+<figure class='code'><figcaption><span> (timecop_snippet.rb)</span> <a href='http://blog.piecesofcode.co/downloads/code/timecop_snippet.rb'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -219,16 +219,16 @@
   
   <entry>
     <title type="html"><![CDATA[How I Built My Blog Using Jekyll?]]></title>
-    <link href="http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog/"/>
     <updated>2014-04-06T18:23:18-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog</id>
+    <id>http://blog.piecesofcode.co/2014/04/06/how-i-built-my-jekyll-blog</id>
     <content type="html"><![CDATA[<p>Hi!</p>
 
 <p>Thanks for getting in here!</p>
 
 <p>For the initial post, I&rsquo;m gonna write all the things I&rsquo;m using to build this blog. As many things I intend to write, nothing magical.</p>
 
-<p>Just to start, in my <a href="http://piecesofcode.co/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
+<p>Just to start, in my <a href="http://blog.piecesofcode.co/about">about page</a> I explain the reasons why I&rsquo;m writing this blog.</p>
 
 <p>Being a blog focused in software development, I thought it will be cool to use something new for me to learn and post about it. So, I decided to use <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.</p>
 
@@ -248,7 +248,7 @@
 
 <p>Here&rsquo;s a print screen of my editor writing this post:</p>
 
-<p><img src="http://piecesofcode.co/images/posts/sublime_markdown.png"></p>
+<p><img src="http://blog.piecesofcode.co/images/posts/sublime_markdown.png"></p>
 
 <p>To summarize this post, I&rsquo;ve talked about:</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Timecop | Pieces of Code]]></title>
-  <link href="http://piecesofcode.co/categories/timecop/atom.xml" rel="self"/>
-  <link href="http://piecesofcode.co/"/>
-  <updated>2014-04-12T12:45:39-03:00</updated>
-  <id>http://piecesofcode.co/</id>
+  <link href="http://blog.piecesofcode.co/categories/timecop/atom.xml" rel="self"/>
+  <link href="http://blog.piecesofcode.co/"/>
+  <updated>2014-04-12T13:03:59-03:00</updated>
+  <id>http://blog.piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using VCR With Timecop]]></title>
-    <link href="http://piecesofcode.co/2014/04/07/using-vcr-with-timecop/"/>
+    <link href="http://blog.piecesofcode.co/2014/04/07/using-vcr-with-timecop/"/>
     <updated>2014-04-07T21:53:34-03:00</updated>
-    <id>http://piecesofcode.co/2014/04/07/using-vcr-with-timecop</id>
+    <id>http://blog.piecesofcode.co/2014/04/07/using-vcr-with-timecop</id>
     <content type="html"><![CDATA[<p>If you already used <a href="https://github.com/vcr/vcr" target="_blank"><code>VCR</code></a> to record requests to unit tests your application, maybe all your tests passed in the day you developed. Then you go to sleep, thinking in another task.</p>
 
 <p>You wake up another day, run all the tests again and boom! All related to VCR are failing and you don&rsquo;t know why.</p>
