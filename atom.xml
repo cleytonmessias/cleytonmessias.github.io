@@ -4,7 +4,7 @@
   <title><![CDATA[Pieces of Code]]></title>
   <link href="http://blog.piecesofcode.co/atom.xml" rel="self"/>
   <link href="http://blog.piecesofcode.co/"/>
-  <updated>2014-05-27T23:39:47-03:00</updated>
+  <updated>2014-05-28T22:56:32-03:00</updated>
   <id>http://blog.piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[POODR - Chapter 2]]></title>
+    <link href="http://blog.piecesofcode.co/2014/05/28/poodr-chapter-2/"/>
+    <updated>2014-05-28T22:53:48-03:00</updated>
+    <id>http://blog.piecesofcode.co/2014/05/28/poodr-chapter-2</id>
+    <content type="html"><![CDATA[<p>Hi,</p>
+
+<p>Here&rsquo;s my second summary from  the <a href="http://www.poodr.com">book</a> (Practical Object-Oriented Design in Ruby).</p>
+
+<p>Again: I don&rsquo;t intend in any way to substitute the original book. I&rsquo;m keeping this for future references and also to help myself studying it.</p>
+
+<p>Have fun :)</p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/35239713" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/cleytonmessias/chapter-02-practical-objectoriented-design-in-ruby" title="Chapter 02 - Practical Object-Oriented Design in Ruby" target="_blank">Chapter 02 &ndash; Practical Object-Oriented Design in Ruby</a> </strong> from <strong><a href="http://www.slideshare.net/cleytonmessias" target="_blank">Cleyton Messias</a></strong> </div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[POODR - Chapter 1]]></title>
