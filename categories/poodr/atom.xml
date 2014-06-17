@@ -4,7 +4,7 @@
   <title><![CDATA[Category: POODR | Pieces of Code]]></title>
   <link href="http://blog.piecesofcode.co/categories/poodr/atom.xml" rel="self"/>
   <link href="http://blog.piecesofcode.co/"/>
-  <updated>2014-05-28T22:56:32-03:00</updated>
+  <updated>2014-06-16T21:43:58-03:00</updated>
   <id>http://blog.piecesofcode.co/</id>
   <author>
     <name><![CDATA[Cleyton Messias]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[POODR - Chapter 3]]></title>
+    <link href="http://blog.piecesofcode.co/2014/06/16/poodr-chapter-3/"/>
+    <updated>2014-06-16T21:37:06-03:00</updated>
+    <id>http://blog.piecesofcode.co/2014/06/16/poodr-chapter-3</id>
+    <content type="html"><![CDATA[<p>Hi,</p>
+
+<p>Here&rsquo;s my third summary from  the <a href="http://www.poodr.com">book</a> (Practical Object-Oriented Design in Ruby).</p>
+
+<p>It covers dependencies and how they can ruin your code if not managed well. My slides don&rsquo;t cover all the books knowledge. It only cover the basis. You MUST read this book :)</p>
+
+<p>Enjoy it :)</p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/35943264" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/cleytonmessias/chapter-03-practical-objectoriented-design-in-ruby" title="Chapter 03 - Practical Object-Oriented Design in Ruby" target="_blank">Chapter 03 &ndash; Practical Object-Oriented Design in Ruby</a> </strong> from <strong><a href="http://www.slideshare.net/cleytonmessias" target="_blank">Cleyton Messias</a></strong> </div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[POODR - Chapter 2]]></title>
